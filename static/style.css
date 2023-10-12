@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: linear-gradient(to right, black, grey);     */
+    background-image: url('../static/assets/bg_image.jpeg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center center;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'static/assets/Fonts/YoungSerif-Regular.ttf';
+    position: relative;
+    margin-top: 30px;
+    color: black;
+    font-size: 42px;
+}
+
+.hide {
+    width: 300px; 
+    height: 300px; 
+    background-image: linear-gradient(to left, #bdbdbd, #F67529); 
+    /* background-color: #566C3B;  */
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.extract {
+    width: 300px; 
+    height: 300px; 
+    /* background-color: #F67529; */
+    background-image: linear-gradient(to left, #566C3B, rgb(211, 211, 211)); 
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-around;
+}
