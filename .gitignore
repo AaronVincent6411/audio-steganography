@@ -1,7 +1,6 @@
 audio
-static
 uploads
-
+static/output
 signin.html
 options.html
 
