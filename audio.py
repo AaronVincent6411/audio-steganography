@@ -28,7 +28,7 @@ def hide_message(input_audio, secret_message, output_audio):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('main.html')
 
 
 @app.route('/hide', methods=['POST'])
@@ -46,10 +46,10 @@ def upload_file():
         output_audio_path = os.path.join(app.config['OUTPUT_FOLDER'], 'modified_audio.wav')
         hide_message(audio_path, secret_message, output_audio_path)
 
+        modified_audio_path = os.path.join(app.config['OUTPUT_FOLDER'], 'modified_audio.wav')
+
         # After hiding we provide a link to download the modified audio
-        return f'<h1>Message successfully hidden in audio!</h1><a href="/download">Download Modified Audio</a>'
-    else:
-        return 'No file uploaded.'
+        return send_file(modified_audio_path, as_attachment=True)
 
 #Extract function
 @app.route('/extract', methods=['POST'])
@@ -65,13 +65,10 @@ def extract_message():
     msg = string.split("###")[0]
     waveaudio.close()
 
-    return f"Hidden Message is: {msg}"
+    if not msg or not msg.isprintable():
+        return " "
 
-#Download function to download after hiding message
-@app.route('/download')
-def download():
-    modified_audio_path = os.path.join(app.config['OUTPUT_FOLDER'], 'modified_audio.wav')
-    return send_file(modified_audio_path, as_attachment=True)
+    return f"{msg}"
 
 if __name__ == '__main__':
     app.run(debug=True)
